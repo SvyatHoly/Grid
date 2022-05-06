@@ -111,7 +111,7 @@ public struct Grid: View, LayoutArranging, LayoutPositioning {
              contentMode: self.contentMode,
              alignment: self.contentAlignment)
       .if(contentMode == .scroll) { content in
-        ScrollView(self.scrollAxis) { content }
+        ScrollView(self.scrollAxis, showsIndicators: false) { content }
       }
       .onPreferenceChange(GridPreferenceKey.self) { preference in
         self.calculateLayout(preference: preference,
